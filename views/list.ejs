@@ -5,29 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo list</title>
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
+    
     <!-- <% if(kindOfDay === "Saturday" || kindOfDay === "Sunday") { %>
 
     <h1 style="color: Red"><%=kindOfDay%> list</h1>
     <% }else{%>
       <h1 style="color: blue"><%=kindOfDay%> list</h1>
     <% }%> -->
-
-    <h1><%=kindOfDay%></h1>
-
-    <ul>
-     
-      <%for(var i=0; i<newListItems.length; i++) {%>
-      <li><%=newListItems[i]%></li>
-     <% }%>
+    <div class="box" id="heading">
       
-    </ul>
+      <h1><%=kindOfDay%></h1>
+    </div>
+<div class="box">
 
+   
+    <%for(var i=0; i<newListItems.length; i++) {%>
+      <div class="item">
+<input type="checkbox">
+        <p><%=newListItems[i]%></p>
+      </div>
+   <% }%>
+    
 
-    <form action="/" method="post">
-      <input type="text" name="newItem"/>
-      <button type="submit" name="button">Add</button>
-    </form>
+   
+       <form class="item" action="/" method="post">
+         <input type="text" name="newItem" placeholder="New Item" autocomplete="off"/>
+         <button type="submit" name="button">+</button>
+       </form>
+</div>
+
   </body>
 </html>
