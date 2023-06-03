@@ -1,26 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Todo list</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-
-  <!-- <% if(kindOfDay === "Saturday" || kindOfDay === "Sunday") { %>
-
-    <h1 style="color: Red"><%=kindOfDay%> list</h1>
-    <% }else{%>
-      <h1 style="color: blue"><%=kindOfDay%> list</h1>
-    <% }%> -->
+<%- include("header") -%>
+ 
   <div class="box" id="heading">
 
     <h1>
-      <%=kindOfDay%>
+      <%=listTitle%>
     </h1>
   </div>
   <div class="box">
@@ -29,7 +13,7 @@
     <%for(var i=0; i<newListItems.length; i++) {%>
       <div class="item">
         <input type="checkbox">
-        <p>
+        <p> 
           <%=newListItems[i]%>
         </p>
       </div>
@@ -39,10 +23,8 @@
 
         <form class="item" action="/" method="post">
           <input type="text" name="newItem" placeholder="New Item" autocomplete="off" />
-          <button type="submit" name="button">+</button>
+          <button type="submit" name="list" value=<%= listTitle %>>+</button>
         </form>
   </div>
 
-</body>
-
-</html>
+<%- include("footer") -%>
